@@ -1,9 +1,7 @@
 @use '/pajak-ui/resources/assets/css/variables' as *;
 
-.pajak-core-placeholder {
-    display: none;
-
-    @media (min-width: $bp-mobile) {
-        display: none;
-    }
-}
+@use 'layout';
+@use 'page-header';
+@use 'user-menu';
+@use 'auth';
+@use 'dashboard';

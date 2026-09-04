@@ -1,0 +1,84 @@
+@use '/pajak-ui/resources/assets/css/variables' as *;
+
+.pajak-core-user-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-2);
+    border: 0;
+    border-radius: var(--radius-md);
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-body);
+    color: var(--fg-primary);
+    text-align: left;
+    transition: background-color var(--duration-micro) var(--ease-out);
+
+    &:hover {
+        background: var(--bg-subtle);
+    }
+
+    &__identity {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-size: var(--fs-sm);
+        font-weight: var(--fw-semibold);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__email {
+        font-size: var(--fs-xs);
+        color: var(--fg-tertiary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.pajak-core-user-menu-pop {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 200px;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-2) var(--space-3);
+        border-radius: var(--radius-sm);
+        font-size: var(--fs-sm);
+        color: var(--fg-primary);
+        text-decoration: none;
+
+        &:hover {
+            background: var(--bg-subtle);
+        }
+    }
+
+    button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-2) var(--space-3);
+        border: 0;
+        border-radius: var(--radius-sm);
+        background: transparent;
+        font: inherit;
+        font-size: var(--fs-sm);
+        color: var(--color-error);
+        cursor: pointer;
+
+        &:hover {
+            background: var(--color-error-light);
+        }
+    }
+}

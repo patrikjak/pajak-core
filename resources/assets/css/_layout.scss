@@ -1,0 +1,56 @@
+@use '/pajak-ui/resources/assets/css/variables' as *;
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--fg-primary);
+    background: var(--bg-page);
+}
+
+.pajak-core-app {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg-page);
+}
+
+.pajak-core-main {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.pajak-core-brand {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-md);
+    letter-spacing: var(--ls-tight);
+    color: var(--fg-primary);
+}
+
+.pajak-core-content {
+    max-width: 1180px;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.pajak-core-mobile-trigger {
+    display: none;
+    position: fixed;
+    top: var(--space-3);
+    left: var(--space-3);
+    z-index: 40;
+}
+
+@media (max-width: #{$bp-mobile - 1px}) {
+    .pajak-core-mobile-trigger {
+        display: inline-flex;
+    }
+
+    .pajak-core-content {
+        padding-top: calc(var(--space-6) + 44px);
+    }
+}

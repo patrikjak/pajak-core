@@ -1,0 +1,24 @@
+@use '/pajak-ui/resources/assets/css/variables' as *;
+
+.pajak-core-auth {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    background: var(--bg-page);
+
+    &__card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    &__brand {
+        margin-bottom: var(--space-6);
+        text-align: center;
+        font-size: var(--fs-lg);
+        font-weight: var(--fw-bold);
+        letter-spacing: var(--ls-tight);
+        color: var(--fg-primary);
+    }
+}

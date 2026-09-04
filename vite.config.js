@@ -56,6 +56,7 @@ export default defineConfig({
         hmr: {
             host: 'vite.core.pajak.local',
             protocol: 'wss',
+            clientPort: 443,
         },
     },
 });

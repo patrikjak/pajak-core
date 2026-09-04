@@ -10,3 +10,16 @@ parameters:
 		- database
 
 	level: 8
+
+	ignoreErrors:
+		# The package config file legitimately reads env(); consumers cache config as usual.
+		-
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			path: config/pajak-core.php
+		# View namespaces are registered at runtime via loadViewsFrom(), so larastan cannot
+		# resolve 'pajak-core::' strings to a view-string without a booted application.
+		-
+			message: '#expects view-string\|null, string given#'
+			paths:
+				- src/View
+				- src/Modules
