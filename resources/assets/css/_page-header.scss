@@ -1,0 +1,35 @@
+@use '/pajak-ui/resources/assets/css/variables' as *;
+
+.pajak-core-page-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+    &__row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: var(--space-3);
+    }
+
+    &__title {
+        margin: 0;
+        font-size: var(--fs-xl);
+        font-weight: var(--fw-bold);
+        letter-spacing: var(--ls-tight);
+        color: var(--fg-primary);
+    }
+
+    &__description {
+        margin: 0;
+        font-size: var(--fs-sm);
+        color: var(--fg-secondary);
+        line-height: var(--lh-normal);
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+    }
+}
