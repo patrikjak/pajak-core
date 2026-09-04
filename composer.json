@@ -1,0 +1,50 @@
+{
+    "name": "pajak/core",
+    "description": "Admin foundation for Laravel: auth, users, roles/permissions, profile, settings, dashboard and a module system, built on pajak/ui",
+    "keywords": ["laravel", "admin", "auth", "rbac"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrik Jakab"
+        }
+    ],
+    "require": {
+        "php": "^8.5",
+        "blade-ui-kit/blade-heroicons": "^2.0",
+        "laravel/framework": "^13.0",
+        "laravel/socialite": "^5.16",
+        "pajak/ui": "^0.5"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^11.0",
+        "phpunit/phpunit": "^13.0",
+        "slevomat/coding-standard": "^8.14",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pajak\\Core\\": "src/",
+            "Pajak\\Core\\Database\\Factories\\": "database/factories/",
+            "Pajak\\Core\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pajak\\Core\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pajak\\Core\\CoreServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         name="pajak/core"
+         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <description>PSR-12 and PER-3 coding standards with Slevomat additions for PHP 8.5+</description>
+
+    <!-- Configuration -->
+    <config name="show_progress" value="1"/>
+    <config name="tab_width" value="4"/>
+    <config name="php_version" value="8.5"/>
+    <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+
+    <!-- Command line arguments -->
+    <arg name="colors"/>
+    <arg name="parallel" value="8"/>
+    <arg value="sp"/>
+    <arg name="extensions" value="php"/>
+
+    <!-- Files to check -->
+    <file>src</file>
+    <file>tests</file>
+    <file>database</file>
+    <file>config</file>
+
+    <!-- ===================================================================== -->
+    <!-- PSR-12 BASE STANDARD                                                  -->
+    <!-- ===================================================================== -->
+
+    <rule ref="PSR12"/>
+
+    <!-- ===================================================================== -->
+    <!-- PER-3 ESSENTIAL ADDITIONS                                             -->
+    <!-- ===================================================================== -->
+
+    <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
+    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat"/>
+    <rule ref="SlevomatCodingStandard.Classes.EnumCaseSpacing"/>
+    <rule ref="SlevomatCodingStandard.Classes.BackedEnumTypeSpacing"/>
+
+    <!-- ===================================================================== -->
+    <!-- RECOMMENDED ADDITIONS (Best Practices)                                -->
+    <!-- ===================================================================== -->
+
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
+            <property name="declareOnFirstLine" value="false"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+
+    <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+        <properties>
+            <property name="linesCountBeforeFirstUse" value="1"/>
+            <property name="linesCountBetweenUseTypes" value="1"/>
+            <property name="linesCountAfterLastUse" value="1"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
+    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
+    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
+    <rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
+    <rule ref="SlevomatCodingStandard.Functions.DisallowEmptyFunction"/>
+    <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
+
+    <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
+
+    <rule ref="SlevomatCodingStandard.Functions.ArrowFunctionDeclaration">
+        <properties>
+            <property name="spacesCountAfterKeyword" value="1"/>
+            <property name="spacesCountBeforeArrow" value="1"/>
+            <property name="spacesCountAfterArrow" value="1"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Files.LineLength">
+        <properties>
+            <property name="lineLengthLimit" value="120"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Classes.ClassLength">
+        <properties>
+            <property name="maxLinesLength" value="300"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Classes.ClassStructure">
+        <properties>
+            <property name="groups" type="array">
+                <element value="uses"/>
+                <element value="enum cases"/>
+                <element value="public constants"/>
+                <element value="protected constants"/>
+                <element value="private constants"/>
+                <element value="public static properties"/>
+                <element value="protected static properties"/>
+                <element value="private static properties"/>
+                <element value="public properties"/>
+                <element value="protected properties"/>
+                <element value="private properties"/>
+                <element value="constructor"/>
+                <element value="static constructors"/>
+                <element value="destructor"/>
+                <element value="magic methods"/>
+                <element value="public static methods, public static abstract methods, public static final methods"/>
+                <element value="protected static methods, protected static abstract methods, protected static final methods"/>
+                <element value="private static methods"/>
+                <element value="public methods, public abstract methods, public final methods"/>
+                <element value="protected methods, protected abstract methods, protected final methods"/>
+                <element value="private methods"/>
+            </property>
+        </properties>
+    </rule>
+
+</ruleset>
